@@ -1,0 +1,9 @@
+.square {
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-content: center;
+}
+.board {
+  background-color: #219ebc;
+}
