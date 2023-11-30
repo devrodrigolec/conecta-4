@@ -30,6 +30,6 @@ body {
   display: grid;
   place-content: center;
   position: relative;
-  width: 95vw;
-  height: 95vh;
+  width: 100vw;
+  height: 100vh;
 }
