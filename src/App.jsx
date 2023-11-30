@@ -99,19 +99,21 @@ function App() {
         </div>
         <button onClick={restartGame}>Restart Game</button>
       </footer>
-      <div
-        style={{
-          position: "absolute",
-          borderRadius: "50%",
-          opacity: 0.8,
-          pointerEvents: "none",
-          top: -40,
-          left: -50,
-          transform: `translate(${position.x}px ,${position.y}px)`,
-        }}
-      >
-        <Circle color={turn} />
-      </div>
+      {window.innerWidth > 768 && (
+        <div
+          style={{
+            position: "absolute",
+            borderRadius: "50%",
+            opacity: 0.8,
+            pointerEvents: "none",
+            top: -40,
+            left: -50,
+            transform: `translate(${position.x}px ,${position.y}px)`,
+          }}
+        >
+          <Circle color={turn} />
+        </div>
+      )}
     </>
   );
 }
