@@ -1,5 +1,22 @@
 import "./square.css";
 
-export const Square = ({ children, isBoard }) => {
-  return <div className={`square ${isBoard ? "board" : ""}`}>{children}</div>;
+export const Square = ({
+  children,
+  isBoard,
+  updateBoard,
+  indexOfColumn,
+  isTurn,
+}) => {
+  const handleClick = () => {
+    updateBoard(indexOfColumn);
+  };
+
+  return (
+    <div
+      onClick={handleClick}
+      className={`square ${isBoard ? "board" : ""} ${isTurn ? "playing" : ""}`}
+    >
+      {children}
+    </div>
+  );
 };

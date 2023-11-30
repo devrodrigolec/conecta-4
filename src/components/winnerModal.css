@@ -1,0 +1,52 @@
+.winner-modal {
+  z-index: 500;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.608);
+}
+.winner-modal__window {
+  width: 50vw;
+  height: 40vw;
+  border-radius: 3vw;
+  background-color: #219ebc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #ffb703;
+  border: 4px dashed #ffb703;
+}
+
+.winner-modal__window h2 {
+  font-size: 4vw;
+  font-weight: bold;
+}
+.winner-modal__window p {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.winner-modal button {
+  width: 25vw;
+  height: 5vw;
+  border-radius: 1vw;
+  background-color: #ffb703;
+  font-size: 2vw;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.winner-modal button:hover {
+  width: 26vw;
+  height: 6vw;
+  font-size: 2.5vw;
+
+  background-color: #f5c345;
+}

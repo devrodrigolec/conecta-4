@@ -1,19 +1,37 @@
 main {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  position: relative;
 }
 
 header h1 {
   text-align: center;
   font-size: 3rem;
-  color: white;
+  color: #fb8500;
+  margin-bottom: 2rem;
 }
 
 header .sq-voids {
   display: flex;
 }
 footer {
+  display: grid;
+  place-content: center;
+
+  gap: 1rem;
+}
+footer div {
   display: flex;
   justify-content: center;
   gap: 2rem;
+}
+footer button {
+  width: 25vw;
+  height: 5vw;
+  border-radius: 1vw;
+  background-color: #ffb703;
+  font-size: 2vw;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
 }

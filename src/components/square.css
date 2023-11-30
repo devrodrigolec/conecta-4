@@ -1,9 +1,14 @@
 .square {
-  width: 8rem;
-  height: 8rem;
+  width: 10vw;
+  height: 10vw;
+  max-width: 7rem;
+  max-height: 7rem;
   display: grid;
   place-content: center;
 }
 .board {
   background-color: #219ebc;
+}
+.playing {
+  background-color: #ffb703;
 }
