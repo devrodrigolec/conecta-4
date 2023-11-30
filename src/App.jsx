@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Circle } from "./components/Circle";
-import { Square } from "./components/Square";
+import { checkWinner, findIndexOfBoard } from "./logic";
+import { Square, Circle, WinnerModal } from "./components";
 import { TURNS, COLUMNS, sqVoids } from "./constants";
-import { WINNER_COMBOS } from "./constants";
-import { WinnerModal } from "./components/WinnerModal";
+import { useEffect, useState } from "react";
 
 function App() {
   const [board, setBoard] = useState(Array(42).fill(null));
@@ -12,25 +10,6 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [enabled, setEnabled] = useState(true);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const findIndexOfBoard = (column, newBoard) => {
-    for (let i = column.length - 1; i >= 0; i--) {
-      if (newBoard[column[i]] === null) return column[i];
-    }
-  };
-
-  const checkWinner = (boardToCheck) => {
-    for (const combo of WINNER_COMBOS) {
-      const [a, b, c, d] = combo;
-      if (
-        boardToCheck[a] &&
-        boardToCheck[a] === boardToCheck[b] &&
-        boardToCheck[a] === boardToCheck[c] &&
-        boardToCheck[a] === boardToCheck[d]
-      )
-        return boardToCheck[a];
-    }
-  };
 
   const restartGame = () => {
     setBoard(Array(42).fill(null));
@@ -126,8 +105,8 @@ function App() {
           borderRadius: "50%",
           opacity: 0.8,
           pointerEvents: "none",
-          left: -20,
-          top: -20,
+          top: -40,
+          left: -50,
           transform: `translate(${position.x}px ,${position.y}px)`,
         }}
       >
