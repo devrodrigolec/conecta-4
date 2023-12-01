@@ -2,11 +2,9 @@
   z-index: 500;
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   display: grid;
   place-content: center;
-  left: 0;
-  top: 0;
   background-color: rgba(0, 0, 0, 0.608);
 }
 .winner-modal__window {
@@ -33,7 +31,7 @@
 }
 
 .winner-modal button {
-  width: 25vw;
+  width: 20vw;
   height: 5vw;
   border-radius: 1vw;
   background-color: #ffb703;
