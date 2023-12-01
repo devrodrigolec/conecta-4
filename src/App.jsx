@@ -61,6 +61,9 @@ function App() {
   return (
     <>
       {winner && <WinnerModal restartGame={restartGame} winner={winner} />}
+      {!winner && board.every((element) => element != null) && (
+        <WinnerModal restartGame={restartGame} />
+      )}
       <header>
         <h1>Conecta 4</h1>
         <div className="sq-voids">
