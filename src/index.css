@@ -22,10 +22,11 @@ body {
   cursor: none;
 }
 .root {
+  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
   position: relative;
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
 }
