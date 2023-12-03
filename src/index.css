@@ -31,8 +31,3 @@ body {
   height: 100vh;
 }
 
-@media (max-width: 720px ){
-  .root {
-    margin-top: 30vw;
-  }
-}
