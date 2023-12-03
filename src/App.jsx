@@ -1,11 +1,11 @@
 import "./App.css";
 import { Square, Circle, WinnerModal } from "./components";
 import { TURNS, sqVoids } from "./constants";
-import { usePosition, useEventMove, useBoardState } from "./hooks";
+import { usePosition,useMouseEventMove, useBoardState } from "./hooks";
 
 function App() {
   const { position, handleMove } = usePosition();
-  const { setEnabled } = useEventMove({ handleMove });
+  const { setEnabled } = useMouseEventMove({ handleMove });
   const { board, turn, winner, updateBoard, restartGame } = useBoardState({
     setEnabled,
   });

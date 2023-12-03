@@ -1,3 +1,3 @@
 export { useBoardState } from "./useBoardState";
-export { useEventMove } from "./useEventMove";
+export { useMouseEventMove } from "./useMouseEventMove";
 export { usePosition } from "./usePosition";

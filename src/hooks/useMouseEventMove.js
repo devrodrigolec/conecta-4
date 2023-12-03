@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 
 
-export function useEventMove ({handleMove}) {
+export function useMouseEventMove ({handleMove}) {
 
 
   const [enabled, setEnabled] = useState(true);
