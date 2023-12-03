@@ -19,9 +19,10 @@ function App() {
       <header>
         <h1>Conecta 4</h1>
         <div className="sq-voids">
-          {sqVoids.map((sq, index) => {
+          {sqVoids.map((_, index) => {
             return (
               <Square
+                isSqVoid={true}
                 updateBoard={updateBoard}
                 indexOfColumn={index}
                 key={index}
@@ -45,11 +46,11 @@ function App() {
       <footer>
         <div>
           <Square isTurn={turn === TURNS.red ? true : false}>
-            <Circle color={TURNS.red}></Circle>
+            <Circle color='red'></Circle>
           </Square>
 
           <Square isTurn={turn === TURNS.green ? true : false}>
-            <Circle color={TURNS.green}></Circle>
+            <Circle color='green'></Circle>
           </Square>
         </div>
         <button onClick={restartGame}>Restart Game</button>

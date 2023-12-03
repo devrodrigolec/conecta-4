@@ -6,6 +6,7 @@ export const Square = ({
   updateBoard,
   indexOfColumn,
   isTurn,
+  isSqVoid
 }) => {
   const handleClick = () => {
     updateBoard(indexOfColumn);
@@ -13,7 +14,7 @@ export const Square = ({
 
   return (
     <div
-      onClick={handleClick}
+      onClick={isSqVoid && handleClick}
       className={`square ${isBoard ? "board" : ""} ${isTurn ? "playing" : ""}`}
     >
       {children}
