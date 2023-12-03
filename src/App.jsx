@@ -1,45 +1,15 @@
 import "./App.css";
-import { checkWinner, findIndexOfBoard } from "./logic";
 import { Square, Circle, WinnerModal } from "./components";
-import { TURNS, COLUMNS, sqVoids } from "./constants";
-import { useState } from "react";
-import { usePosition, useEventMove } from "./hooks";
-
-
-
+import { TURNS, sqVoids } from "./constants";
+import { usePosition, useEventMove, useBoardState } from "./hooks";
 
 function App() {
-  const [board, setBoard] = useState(Array(42).fill(null));
-  const [turn, setTurn] = useState(TURNS.red);
-  const [winner, setWinner] = useState(null);
   const { position, handleMove } = usePosition();
-  const {setEnabled} = useEventMove({handleMove})
+  const { setEnabled } = useEventMove({ handleMove });
+  const { board, turn, winner, updateBoard, restartGame } = useBoardState({
+    setEnabled,
+  });
 
-  const restartGame = () => {
-    setBoard(Array(42).fill(null));
-    setTurn(TURNS.red);
-    setWinner(null);
-    setEnabled(true);
-  };
-
-  const updateBoard = (indexOfColumn) => {
-    if (winner) return;
-    const newBoard = [...board];
-    const newTurn = turn === TURNS.red ? TURNS.green : TURNS.red;
-    const column = COLUMNS[indexOfColumn];
-    const indexOfBoard = findIndexOfBoard(column, newBoard);
-    newBoard[indexOfBoard] = turn;
-    setBoard(newBoard);
-    setTurn(newTurn);
-    const newWinner = checkWinner(newBoard);
-    if (newWinner) {
-      setWinner(newWinner);
-      setEnabled(false);
-      document.body.classList.remove("no-cursor");
-    }
-  };
-
- 
   return (
     <>
       {winner && <WinnerModal restartGame={restartGame} winner={winner} />}
