@@ -1,7 +1,6 @@
 .square {
-  width: 8vw;
-  height: 8vw;
-
+  width: 4.5vw;
+  height: 4.5vw;
   display: grid;
   place-content: center;
 }
@@ -12,6 +11,9 @@
   background-color: #ffb703;
 }
 
-@media (min-width: 768px ) {
-  
+@media (max-width: 720px ) {
+  .square {
+    width: 13vw;
+    height: 13vw;
+  }
 }

@@ -5,6 +5,11 @@ main {
   position: relative;
 }
 
+@media (max-width: 720px) {
+  header{
+    margin-top: 0vw;
+  }
+}
 header h1 {
   text-align: center;
   font-size: 3rem;

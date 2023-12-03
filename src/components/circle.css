@@ -1,9 +1,8 @@
 .circle {
   background-color: #023047;
-  width: 7vw;
-  height: 7vw;
-  max-width: 6rem;
-  max-height: 6rem;
+  width: 4vw;
+  height: 4vw;
+  
   border-radius: 50%;
   border: 2px solid black;
   display: grid;
@@ -23,4 +22,11 @@
 }
 .green-filled {
   background-color: green;
+}
+
+@media (max-width: 720px ) {
+  .circle {
+    width: 11vw;
+    height: 11vw;
+  }
 }
