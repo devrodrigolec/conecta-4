@@ -54,6 +54,7 @@ function App() {
           </Square>
         </div>
         <button onClick={restartGame}>Restart Game</button>
+        <span className="credits">💻 Coded by Rodrigo Leciñana 💻 </span>
       </footer>
       {window.innerWidth > 768 && (
         <div

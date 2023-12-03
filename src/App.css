@@ -36,3 +36,8 @@ footer button {
   color: white;
   cursor: pointer;
 }
+
+.credits{
+  text-align: center;
+  color: white;
+}
