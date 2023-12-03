@@ -16,8 +16,9 @@ header .sq-voids {
   display: flex;
 }
 footer {
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   gap: 1rem;
 }

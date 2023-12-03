@@ -1,8 +1,7 @@
 .square {
   width: 8vw;
   height: 8vw;
-  max-width: 7rem;
-  max-height: 7rem;
+
   display: grid;
   place-content: center;
 }
@@ -11,4 +10,8 @@
 }
 .playing {
   background-color: #ffb703;
+}
+
+@media (min-width: 768px ) {
+  
 }
