@@ -2,14 +2,18 @@ import "./App.css";
 import { checkWinner, findIndexOfBoard } from "./logic";
 import { Square, Circle, WinnerModal } from "./components";
 import { TURNS, COLUMNS, sqVoids } from "./constants";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { usePosition, useEventMove } from "./hooks";
+
+
+
 
 function App() {
   const [board, setBoard] = useState(Array(42).fill(null));
   const [turn, setTurn] = useState(TURNS.red);
   const [winner, setWinner] = useState(null);
-  const [enabled, setEnabled] = useState(true);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const { position, handleMove } = usePosition();
+  const {setEnabled} = useEventMove({handleMove})
 
   const restartGame = () => {
     setBoard(Array(42).fill(null));
@@ -35,29 +39,7 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    document.body.classList.toggle("no-cursor", enabled);
-
-    return () => {
-      document.body.classList.remove("no-cursor");
-    };
-  }, [enabled]);
-
-  useEffect(() => {
-    console.log("efecto", { enabled });
-
-    const handleMove = (event) => {
-      const { clientX, clientY } = event;
-      setPosition({ x: clientX, y: clientY });
-    };
-    if (enabled) {
-      window.addEventListener("pointermove", handleMove);
-    }
-    return () => {
-      window.removeEventListener("pointermove", handleMove);
-    };
-  }, [enabled]);
-
+ 
   return (
     <>
       {winner && <WinnerModal restartGame={restartGame} winner={winner} />}
