@@ -63,8 +63,8 @@ function App() {
             borderRadius: "50%",
             opacity: 0.8,
             pointerEvents: "none",
-            top: -40,
-            left: -50,
+            top: -30,
+            left: -30,
             transform: `translate(${position.x}px ,${position.y}px)`,
           }}
         >

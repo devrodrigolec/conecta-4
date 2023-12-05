@@ -18,9 +18,9 @@ body {
   background-color: #023047;
 }
 
-.no-cursor {
+/* .no-cursor {
   cursor: none;
-}
+} */
 .root {
   overflow: hidden;
   display: flex;
@@ -30,6 +30,3 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
-
-
